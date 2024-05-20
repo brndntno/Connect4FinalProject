@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class GraphicsPanel extends JPanel implements KeyListener, MouseListener, ActionListener {
 
+    private ArrayList<Chip> chips;
     public GraphicsPanel() {
-
+        chips = new ArrayList<Chip>();
     }
     @Override
     public void actionPerformed(ActionEvent e) {
