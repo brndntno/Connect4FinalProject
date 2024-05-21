@@ -1,12 +1,22 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class GraphicsPanel extends JPanel implements KeyListener, MouseListener, ActionListener {
 
-    private ArrayList<Chip> chips;
+    private ArrayList<Chip> playerOneChips;
+    private ArrayList<Chip> playerTwoChips;
+    private BufferImage background;
     public GraphicsPanel() {
-        chips = new ArrayList<Chip>();
+        try {
+            background = ImageIO.read(new File("src/background.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        playerOneChips = new ArrayList<Chip>();
+        playerTwoChips =
     }
     @Override
     public void actionPerformed(ActionEvent e) {
